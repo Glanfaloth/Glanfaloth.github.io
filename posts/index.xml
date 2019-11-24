@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Lanlan</title>
+    <link>http://glanfaloth.github.io/posts/</link>
+    <description>Recent content in Posts on Lanlan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 21 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://glanfaloth.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jurors or Murderers? A Paradox of Justice</title>
+      <link>http://glanfaloth.github.io/posts/jurors-or-murderers-a-paradox-of-justice/</link>
+      <pubDate>Sun, 21 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://glanfaloth.github.io/posts/jurors-or-murderers-a-paradox-of-justice/</guid>
+      <description>Book Review: Murder on the Orient Express SPOILER ALERT! The book review may reveal key plots
+Famed crime novelist Agatha Christie published the classic Murder on the Orient Express in 1934. It is set on the Orient express on its journey from Vienna to Istanbul.
+One day, a passenger is found dead, stabbed 12 times. The train is stalled by heavy snowdrift, and the renowned Belgian detective Hercule Poirot&amp;rsquo;s trip is interrupted to investigate the case.</description>
+    </item>
+    
+  </channel>
+</rss>
