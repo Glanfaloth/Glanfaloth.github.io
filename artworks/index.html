@@ -33,18 +33,13 @@
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
     <link rel="stylesheet" href="https://glanfaloth.github.io/css/normalize.min.css">
     <link rel="stylesheet" href="https://glanfaloth.github.io/css/style.min.css">
-
+    <link rel="stylesheet" href="https://glanfaloth.github.io/css/slideshow-gallery.css">
     
-
-    
-
     <link rel="icon" type="image/png" href="https://glanfaloth.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://glanfaloth.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    
       <link rel="alternate" href="https://glanfaloth.github.io/index.xml" type="application/rss+xml" title="Lanlan">
       <link href="https://glanfaloth.github.io/index.xml" rel="feed" type="application/rss+xml" title="Lanlan" />
-    
 
     <meta name="generator" content="Hugo 0.58.0" />
   </head>
@@ -58,7 +53,6 @@
     <label class="menu-mobile  float-right " for="menu-control">
       <span class="btn-mobile  float-right ">&#9776;</span>
       <ul class="navigation-list">
-        
           
             <li class="navigation-item  align-center ">
               <a class="navigation-link" href="https://glanfaloth.github.io/about">About</a>
@@ -102,38 +96,41 @@
 
     
 
-<h2 id="recent-posters">Recent Posters</h2>
+<h2>SOCCER POSTERS OF SEASON 2019 / 2020</h2>
 
-<figure>
-    <img src="/artworks/poster3.png"/> <figcaption>
-            <h4>Nov. 17, 2019</h4>
-        </figcaption>
-</figure>
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 3</div>
+      <img src="/artworks/poster1.png" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">2 / 3</div>
+      <img src="/artworks/poster2.png" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">3 / 3</div>
+      <img src="/artworks/poster3.png" style="width:100%">
+  </div>
 
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-<hr />
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
 
-<figure>
-    <img src="/artworks/poster2.png"/> <figcaption>
-            <h4>Oct. 26, 2019</h4>
-        </figcaption>
-</figure>
-
-
-<hr />
-
-<figure>
-    <img src="/artworks/poster1.png"/> <figcaption>
-            <h4>Oct. 13, 2019</h4>
-        </figcaption>
-</figure>
-
-
-<hr />
-
-<h3 id="see-more-soccer-posters-of-season-2018-2019-poster1819"><a href="/poster1819">see more soccer posters of season 2018 / 2019</a></h3>
-
-<h3 id="see-more-soccer-posters-of-season-2017-2018-poster1718"><a href="/poster1718">see more soccer posters of season 2017 / 2018</a></h3>
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="/artworks/poster1.png" style="width:100%" onclick="currentSlide(1)" alt="NOV. 17, 2019">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/artworks/poster2.png" style="width:100%" onclick="currentSlide(2)" alt="OCT. 26, 2019">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/artworks/poster3.png" style="width:100%" onclick="currentSlide(3)" alt="OCT. 13, 2019">
+    </div>
+  </div>
+</div>
 
   </article>
 </section>
@@ -180,6 +177,7 @@
     
 
   <script src="https://glanfaloth.github.io/js/app.js"></script>
+  <script src="https://glanfaloth.github.io/js/slideshow-gallery.js"></script>
   
   <script>
   (function($) {
