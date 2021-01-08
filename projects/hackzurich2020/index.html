@@ -30,7 +30,7 @@
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
     <link rel="stylesheet" href="https://glanfaloth.github.io/css/normalize.min.css">
     <link rel="stylesheet" href="https://glanfaloth.github.io/css/style.min.css">
     <link rel="stylesheet" href="https://glanfaloth.github.io/css/tooltip.css">
@@ -106,21 +106,32 @@
   <p>Please check out <a href="https://devpost.com/software/fit-fit-qfg1t3">Devpost</a> for details.</p>
 
   <h3 style="text-align:center">Group Photo</h3>
-    <figure class="tooltip">
-      <img src="/projects/hackzurich2020/photo.jpg" alt="groupphoto" usemap="#photomap"/> 
-    </figure>
-<map name="photomap">
-  <area shape="circle" coords="300,867,100" alt="Awarder">
-  <area shape="circle" coords="1250,930,100" alt="Yelan Tao" onclick="displayName()">
-  <area shape="circle" coords="1540,855,100" alt="Michael Yared">
-  <area shape="circle" coords="940,1010,100" alt="Tianhong Gan">
-  <area shape="circle" coords="730,915,100" alt="Semion Rozov">
-</map>
+  <div style="display: flex;justify-content: center" class="mapcontainer">
+    <img src="/projects/hackzurich2020/photo.jpg" alt="groupphoto" usemap="#photomap" style="width: 1024px; height: 682px"/>
+    <div class="text-block">
+      <p>What a beautiful sunrise</p>
+    </div>
+  </div>
 
+<map name="photomap">
+  <area shape="circle" coords="150,433,50" alt="Awarder" onmouseover="displayName(this)">
+  <area shape="circle" coords="625,465,50" alt="Yelan Tao" onmouseover="displayName(this)">
+  <area shape="circle" coords="770,428,50" alt="Michael Yared" onmouseover="displayName(this)">
+  <area shape="circle" coords="470,505,50" alt="Tianhong Gan" onmouseover="displayName(this)">
+  <area shape="circle" coords="365,457,50" alt="Semion Rozov" onmouseover="displayName(this)">
+</map>
 <script>
-  function displayName() {
-    alert("Yelan Tao");
+  function tempAlert(msg,duration)
+  {
+  var el = document.createElement("div");
+  el.setAttribute("style","position:absolute;top:40%;left:20%");
+  el.innerHTML = msg;
+  setTimeout(function(){
+    el.parentNode.removeChild(el);
+  },duration);
+  document.body.appendChild(el);
   }
+  function displayName(x) {alert(x.alt);}
 </script>
 
   </article>
