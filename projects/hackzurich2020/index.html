@@ -106,16 +106,23 @@
   <p>Please check out <a href="https://devpost.com/software/fit-fit-qfg1t3">Devpost</a> for details.</p>
 
   <h3 style="text-align:center">Group Photo</h3>
-    <figure>
+    <figure class="tooltip">
       <img src="/projects/hackzurich2020/photo.jpg" alt="groupphoto" usemap="#photomap"/> 
     </figure>
 <map name="photomap">
   <area shape="circle" coords="300,867,100" alt="Awarder">
-  <area shape="circle" coords="1250,930,100" alt="Yelan Tao" class="tooltip"><span class="tooltiptext">Yelan Tao</span></area>
+  <area shape="circle" coords="1250,930,100" alt="Yelan Tao" onclick="displayName()">
   <area shape="circle" coords="1540,855,100" alt="Michael Yared">
   <area shape="circle" coords="940,1010,100" alt="Tianhong Gan">
   <area shape="circle" coords="730,915,100" alt="Semion Rozov">
 </map>
+
+<script>
+  function displayName() {
+    alert("Yelan Tao");
+  }
+</script>
+
   </article>
 </section>
 
