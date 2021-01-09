@@ -1,5 +1,6 @@
 .mapcontainer {
   position: relative;
+  width: 100%;
 }
 
 .name-box {
