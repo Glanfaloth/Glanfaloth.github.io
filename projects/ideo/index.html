@@ -393,30 +393,34 @@
 <h3 style="text-align:center">Group Photo</h3>
 <p style="text-align:center">(Hover over the faces to see who they are!)</p>
 <div style="display: flex;justify-content: center" class="mapcontainer">
-  <img src="/projects/ideo/ideo-en/photo.JPG" alt="groupphoto" usemap="#photomap" style="width: 1265px; height: 949px"/>
-  <div class="name-box" style="bottom: 320px;right: 270px" id="5">
-    <p>Michael</p>
+  <img src="/projects/ideo/ideo-en/photo.JPG" alt="groupphoto" usemap="#photomap" width="1265" height="949"/>
+  <div class="name-box" style="bottom: 65%;right: 66%" id="1">
+    <p>AWARDER</p>
   </div>
-  <div class="name-box" style="bottom: 280px;right: 420px" id="4">
+  <div class="name-box" style="bottom: 63%;right: 59%" id="2">
     <p>Yelan</p>
   </div>
-  <div class="name-box" style="bottom: 240px;right: 570px" id="3">
-    <p>Tianhong</p>
+  <div class="name-box" style="bottom: 65%;right: 49%" id="3">
+    <p>Haitian</p>
   </div>
-  <div class="name-box" style="bottom: 300px;right: 700px" id="2">
-    <p>Semion</p>
+  <div class="name-box" style="bottom: 65%;right: 42%" id="4">
+    <p>Li</p>
   </div>
-  <div class="name-box" style="bottom: 310px;right: 870px" id="1">
+  <div class="name-box" style="bottom: 70%;right: 29%" id="5">
+    <p>AWARDER</p>
+  </div>
+  <div class="name-box" style="bottom: 70%;right: 18%" id="6">
     <p>AWARDER</p>
   </div>
 </div>
 
 <map name="photomap">
-<area shape="circle" coords="150,433,50" alt="1" onmouseover="displayName(this)" onmouseleave="hideName(this)">
-<area shape="circle" coords="365,457,50" alt="2" onmouseover="displayName(this)" onmouseleave="hideName(this)">
-<area shape="circle" coords="470,505,50" alt="3" onmouseover="displayName(this)" onmouseleave="hideName(this)">
-<area shape="circle" coords="625,465,50" alt="4" onmouseover="displayName(this)" onmouseleave="hideName(this)">
-<area shape="circle" coords="770,428,50" alt="5" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+<area shape="circle" coords="370,420,50" alt="1" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+<area shape="circle" coords="480,430,50" alt="2" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+<area shape="circle" coords="590,400,50" alt="3" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+<area shape="circle" coords="720,400,50" alt="4" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+<area shape="circle" coords="840,365,50" alt="5" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+<area shape="circle" coords="990,370,50" alt="6" onmouseover="displayName(this)" onmouseleave="hideName(this)">
 </map>
 
 <p>The 4th Tsinghua-IDEO Potential Management Elite Competition in 2018</p>
@@ -444,6 +448,7 @@
   <script src="https://glanfaloth.github.io/js/app.js"></script>
   <script src="https://glanfaloth.github.io/js/slideshow-gallery.js"></script>
   <script src="https://glanfaloth.github.io/js/name-map.js"></script>
+  <script src="https://glanfaloth.github.io/js/jquery.rwdImageMaps.js"></script>
   <script>
   (function($) {
     $(function() {
@@ -453,6 +458,11 @@
       });
     });
   })(jQuery);
+  </script>
+  <script>
+    $(document).ready(function(e) {
+      $('img[usemap]').rwdImageMaps();
+    });
   </script>
   </body>
 </html>

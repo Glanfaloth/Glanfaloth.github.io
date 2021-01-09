@@ -344,10 +344,33 @@
     </div>
 
     <h3 style="text-align:center">Group Photo</h3>
-    <p style="text-align:center">(Hover over the faces to see who they are!)</p>
-    <figure>
-      <img src="/projects/didi/foto.JPG"/> 
-    </figure>
+  <p style="text-align:center">(Hover over the faces to see who they are!)</p>
+  <div style="display: flex;justify-content: center" class="mapcontainer">
+    <figure><img src="/projects/didi/foto.JPG" alt="groupphoto" usemap="#photomap" width="1024" height="682"/></figure>
+    <div class="name-box" style="bottom: 47%;right: 20%" id="5">
+      <p>Michael</p>
+    </div>
+    <div class="name-box" style="bottom: 41%;right: 35%" id="4">
+      <p>Yelan</p>
+    </div>
+    <div class="name-box" style="bottom: 35%;right: 49%" id="3">
+      <p>Tianhong</p>
+    </div>
+    <div class="name-box" style="bottom: 44%;right: 61%" id="2">
+      <p>Semion</p>
+    </div>
+    <div class="name-box" style="bottom: 46%;right: 81%" id="1">
+      <p>AWARDER</p>
+    </div>
+  </div>
+
+<map name="photomap">
+  <area shape="circle" coords="150,430,50" alt="1" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+  <area shape="circle" coords="365,457,50" alt="2" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+  <area shape="circle" coords="470,505,50" alt="3" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+  <area shape="circle" coords="625,465,50" alt="4" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+  <area shape="circle" coords="770,428,50" alt="5" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+</map>
 
   </article>
 </section>
@@ -384,6 +407,7 @@
   <script src="https://glanfaloth.github.io/js/app.js"></script>
   <script src="https://glanfaloth.github.io/js/slideshow-gallery.js"></script>
   <script src="https://glanfaloth.github.io/js/name-map.js"></script>
+  <script src="https://glanfaloth.github.io/js/jquery.rwdImageMaps.js"></script>
   <script>
   (function($) {
     $(function() {
@@ -392,8 +416,12 @@
         $('#privateTriggerText').text("你好|Hallo|Salut|こんにちは|Toki|Qapla\x27");
       });
     });
-   })(jQuery);
+  })(jQuery);
   </script>
-  
+  <script>
+    $(document).ready(function(e) {
+      $('img[usemap]').rwdImageMaps();
+    });
+  </script>
   </body>
 </html>
