@@ -6,3 +6,7 @@ function hideName(x) {
     document.getElementById(x.alt).style.visibility = "hidden";
     document.getElementById(x.alt).style.opacity = "0";
 }
+
+function alertName(x) {
+    alert(x.alt);
+}
