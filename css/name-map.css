@@ -1,0 +1,16 @@
+.mapcontainer {
+  position: relative;
+}
+
+.name-box {
+  position: absolute;
+  background-color: black;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  visibility: hidden;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1s;
+}

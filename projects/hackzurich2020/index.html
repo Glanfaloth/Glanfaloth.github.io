@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
     <link rel="stylesheet" href="https://glanfaloth.github.io/css/normalize.min.css">
     <link rel="stylesheet" href="https://glanfaloth.github.io/css/style.min.css">
-    <link rel="stylesheet" href="https://glanfaloth.github.io/css/tooltip.css">
+    <link rel="stylesheet" href="https://glanfaloth.github.io/css/name-map.css">
 
     <link rel="icon" type="image/png" href="https://glanfaloth.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://glanfaloth.github.io/images/favicon-16x16.png" sizes="16x16">
@@ -106,47 +106,61 @@
   <p>Please check out <a href="https://devpost.com/software/fit-fit-qfg1t3">Devpost</a> for details.</p>
 
   <h3 style="text-align:center">Group Photo</h3>
+  <p style="text-align:center">(Hover over the faces to see who they are!)</p>
   <div style="display: flex;justify-content: center" class="mapcontainer">
     <img src="/projects/hackzurich2020/photo.jpg" alt="groupphoto" usemap="#photomap" style="width: 1024px; height: 682px"/>
-    <div class="text-block">
-      <p>What a beautiful sunrise</p>
+    <div class="name-box" style="bottom: 320px;right: 270px" id="5">
+      <p>Michael</p>
+    </div>
+    <div class="name-box" style="bottom: 280px;right: 420px" id="4">
+      <p>Yelan</p>
+    </div>
+    <div class="name-box" style="bottom: 240px;right: 570px" id="3">
+      <p>Tianhong</p>
+    </div>
+    <div class="name-box" style="bottom: 300px;right: 700px" id="2">
+      <p>Semion</p>
+    </div>
+    <div class="name-box" style="bottom: 310px;right: 870px" id="1">
+      <p>Awarder</p>
     </div>
   </div>
+  <style>
+    .mapcontainer {
+      position: relative;
+    }
+
+    .name-box {
+      position: absolute;
+      background-color: black;
+      color: white;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 5px;
+      visibility: hidden;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+  </style>
 
 <map name="photomap">
-  <area shape="circle" coords="150,433,50" alt="Awarder" onmouseover="displayName(this)">
-  <area shape="circle" coords="625,465,50" alt="Yelan Tao" onmouseover="displayName(this)">
-  <area shape="circle" coords="770,428,50" alt="Michael Yared" onmouseover="displayName(this)">
-  <area shape="circle" coords="470,505,50" alt="Tianhong Gan" onmouseover="displayName(this)">
-  <area shape="circle" coords="365,457,50" alt="Semion Rozov" onmouseover="displayName(this)">
+  <area shape="circle" coords="150,433,50" alt="1" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+  <area shape="circle" coords="365,457,50" alt="2" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+  <area shape="circle" coords="470,505,50" alt="3" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+  <area shape="circle" coords="625,465,50" alt="4" onmouseover="displayName(this)" onmouseleave="hideName(this)">
+  <area shape="circle" coords="770,428,50" alt="5" onmouseover="displayName(this)" onmouseleave="hideName(this)">
 </map>
-<style>
-  .container {
-    position: relative;
-  }
 
-  .text-block {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: black;
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-</style>
 <script>
-  function tempAlert(msg,duration)
-  {
-  var el = document.createElement("div");
-  el.setAttribute("style","position:absolute;top:40%;left:20%");
-  el.innerHTML = msg;
-  setTimeout(function(){
-    el.parentNode.removeChild(el);
-  },duration);
-  document.body.appendChild(el);
+  function displayName(x) {
+    document.getElementById(x.alt).style.visibility = "visible";
+    document.getElementById(x.alt).style.opacity = "1";
   }
-  function displayName(x) {alert(x.alt);}
+  function hideName(x) {
+    document.getElementById(x.alt).style.visibility = "hidden";
+    document.getElementById(x.alt).style.opacity = "0";
+  }
 </script>
 
   </article>
@@ -193,10 +207,8 @@
       
     </main>
 
-    
-
   <script src="https://glanfaloth.github.io/js/app.js"></script>
-  
+  <script src="https://glanfaloth.github.io/js/name-map.js"></script>
   <script>
   (function($) {
     $(function() {
