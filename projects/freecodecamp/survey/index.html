@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+            :root {
+            --color-white: #FFFFFF;
+            --color-orangegold: #F8C54B;
+            --color-sunny-alpha: rgba(248,209,75, 0.8);
+            --color-green: #C3F671;
+            }
+
+            *,
+            *::before,
+            *::after {
+            box-sizing: border-box;
+            }
+
+            body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--color-white);
+            margin: 0;
+            }
+
+            /* mobile friendly alternative to using background-attachment: fixed */
+            body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background: var(--color-orangegold);
+            background-image: linear-gradient(
+                115deg,
+                rgba(248,197,75, 0.8),
+                rgba(248,209,75, 0.7)
+                ),
+                url(https://glanfaloth.github.io/projects/freecodecamp/survey/wallpaper.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            }
+
+            h1 {
+            font-weight: 400;
+            line-height: 1.2;
+            }
+
+            p {
+            font-size: 1.125rem;
+            }
+
+            h1,
+            p {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            }
+
+            label {
+            display: flex;
+            align-items: center;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            }
+
+            input,
+            button,
+            select,
+            textarea {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            }
+
+            button {
+            border: none;
+            }
+
+            .container {
+            width: 100%;
+            margin: 3.125rem auto 0 auto;
+            }
+
+            @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+            }
+
+            @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+            }
+
+            .header {
+            padding: 0 0.625rem;
+            margin-bottom: 1.875rem;
+            }
+
+            .description {
+            font-style: italic;
+            font-weight: 200;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+            }
+
+            .clue {
+            margin-left: 0.25rem;
+            font-size: 0.9rem;
+            color: #e4e4e4;
+            }
+
+            .text-center {
+            text-align: center;
+            }
+
+            /* form */
+
+            form {
+            background: var(--color-sunny-alpha);
+            padding: 2.5rem 0.625rem;
+            border-radius: 0.25rem;
+            }
+
+            @media (min-width: 480px) {
+            form {
+                padding: 2.5rem;
+            }
+            }
+
+            .form-group {
+            margin: 0 auto 1.25rem auto;
+            padding: 0.25rem;
+            }
+
+            .form-control {
+            display: block;
+            width: 100%;
+            height: 2.375rem;
+            padding: 0.375rem 0.75rem;
+            color: #BFC3A9;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #DBDECC;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            }
+
+            .form-control:focus {
+            border-color: #C3F671;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(195,246,113, 0.25);
+            }
+
+            .input-radio,
+            .input-checkbox {
+            display: inline-block;
+            margin-right: 0.625rem;
+            min-height: 1.25rem;
+            min-width: 1.25rem;
+            }
+
+            .input-textarea {
+            min-height: 120px;
+            width: 100%;
+            padding: 0.625rem;
+            resize: vertical;
+            }
+
+            .submit-button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--color-green);
+            color: inherit;
+            border-radius: 2px;
+            cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="container">
+            <header class="header">
+                <h1 id="title" class="text-center">JOJO Fan Survey Form</h1>
+                <p id="description" class="description text-center">Do you like JOJO's Bizarre Adventure?</p>
+            </header>
+            <form id="survey-form">
+                <div class="form-group">
+                <label id="name-label" for="name">Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="form-control"
+                    placeholder="Enter your name"
+                    required
+                />
+                </div>
+                <div class="form-group">
+                <label id="email-label" for="email">Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="form-control"
+                    placeholder="Enter your Email"
+                    required
+                />
+                </div>
+                <div class="form-group">
+                <label id="number-label" for="number"
+                    >Age<span class="clue">(optional)</span></label
+                >
+                <input
+                    type="number"
+                    name="age"
+                    id="number"
+                    min="1"
+                    max="999"
+                    class="form-control"
+                    placeholder="Enter your age"
+                />
+                </div>
+                
+                <div class="form-group">
+                <p>Would you recommend JOJO's Bizarre Adventure to a friend?</p>
+                <label>
+                    <input
+                    name="user-recommend"
+                    value="definitely"
+                    type="radio"
+                    class="input-radio"
+                    checked
+                    />Definitely</label
+                >
+                <label>
+                    <input
+                    name="user-recommend"
+                    value="absolutely"
+                    type="radio"
+                    class="input-radio"
+                    />Absolutely</label
+                >
+
+                <label
+                    ><input
+                    name="user-recommend"
+                    value="certainly"
+                    type="radio"
+                    class="input-radio"
+                    />Certainly</label
+                >
+                </div>
+
+                <div class="form-group">
+                <p>
+                    Who is your favorite JOJO?
+                </p>
+                <select id="favorite" name="favorite" class="form-control" required>
+                    <option disabled selected value>Select a JOJO</option>
+                    <option value="1">Jonathan Joestar</option>
+                    <option value="2">Joseph Joestar</option>
+                    <option value="3">Kujo Jotaro</option>
+                    <option value="4">Higashikata Josuke</option>
+                    <option value="5">Giorno Giovanna</option>
+                    <option value="6">Kujo Jolyne</option>
+                </select>
+                </div>
+
+                <div class="form-group">
+                <p>Which following lines of Dio's do you like?<span class="clue">(Check all that apply)</span>
+                </p>
+
+                <label
+                    ><input
+                    name="prefer"
+                    value="stop-being-human"
+                    type="checkbox"
+                    class="input-checkbox"
+                    />「おれは人間をやめるぞ！ ジョジョ―ッ！」</label
+                >
+                <label>
+                    <input
+                    name="prefer"
+                    value="weak"
+                    type="checkbox"
+                    class="input-checkbox"
+                    />「貧弱！貧弱ゥ！」</label
+                >
+                <label
+                    ><input
+                    name="prefer"
+                    value="looking"
+                    type="checkbox"
+                    class="input-checkbox"
+                    />「ジョセフ・ジョースター！ きさま！ 見ているなッ！」</label
+                >
+                <label
+                    ><input
+                    name="prefer"
+                    value="wide-road"
+                    type="checkbox"
+                    class="input-checkbox"
+                    />「歩道が広いではないか」</label>
+                <label
+                    ><input
+                    name="prefer"
+                    value="stop-time"
+                    type="checkbox"
+                    class="input-checkbox"
+                    />「ザ・ワールドッ！ 時よ止まれ！」</label>
+                <label
+                    ><input
+                    name="prefer"
+                    value="high"
+                    type="checkbox"
+                    class="input-checkbox"
+                    />「最高にハイってやつだアアア」</label>
+                <label
+                    ><input
+                    name="prefer"
+                    value="roadroller"
+                    type="checkbox"
+                    class="input-checkbox"
+                    />「ロードローラーだッ！」</label
+                >
+                <label
+                    ><input
+                    name="prefer"
+                    value="useless"
+                    type="checkbox"
+                    class="input-checkbox"
+                    />「無駄無駄無駄無駄無駄無駄無駄無駄ァーーーッ」</label
+                >
+                <label
+                    ><input
+                    name="prefer"
+                    value="wry"
+                    type="checkbox"
+                    class="input-checkbox"
+                    />「WRYYYYYYYYYYーーーッ」</label
+                >
+                </div>
+
+                <div class="form-group">
+                <p>If you have a Stand, what abilities would it have?</p>
+                <textarea
+                    id="stand"
+                    class="input-textarea"
+                    name="stand"
+                    placeholder="Enter your imagination here..."
+                ></textarea>
+                </div>
+
+                <div class="form-group">
+                <button type="submit" id="submit" class="submit-button">
+                    Submit
+                </button>
+                </div>
+            </form>
+            </div>
+        </main>
+    </body>
+</html>
