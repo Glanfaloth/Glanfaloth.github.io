@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous"
+            />
+        <style>
+            
+            @import 'https://fonts.googleapis.com/css?family=Lato:400,700';
+
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            body {
+            font-family: 'Lato', sans-serif;
+            background-size: 40px 40px;
+            background-color: rgba(197,8,79, 1);
+            background-image:
+                linear-gradient(90deg, white 2px, transparent 1px),
+                linear-gradient(180deg, white 2px, transparent 1px);
+            }
+
+            #page-wrapper {
+            position: relative;
+            }
+
+            li {
+            list-style: none;
+            }
+
+            a {
+            color: rgb(104,84,157);
+            text-decoration: none;
+            }
+
+            /** global classes styling **/
+
+            .container {
+            padding: 40px;
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            }
+
+            /* button */
+            .btn {
+            padding: 0 20px;
+            height: 40px;
+            font-size: 1em;
+            font-weight: 900;
+            text-transform: uppercase;
+            border: 3px black solid;
+            border-radius: 2px;
+            background: transparent;
+            cursor: pointer;
+            }
+
+            .grid {
+            display: flex;
+            }
+
+            header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            min-height: 50px;
+            padding: 0px 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba(247,113,153, 1);
+            }
+
+            @media (max-width: 600px) {
+            header {
+                flex-wrap: wrap;
+            }
+            }
+
+            /* logo css */
+            .logo {
+            width: 20vw;
+            }
+            .logo > img {
+            width: 100%;
+            height: 100%;
+            max-width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-left: 4px;
+            margin-top: 10px;
+            }
+
+            @media (max-width: 650px) {
+            .logo {
+                margin-top: 15px;
+                width: 40%;
+                position: relative;
+            }
+            .logo > img {
+                margin: 10 auto;
+            }
+            }
+
+            nav {
+            font-weight: 400;
+            }
+
+            @media (max-width: 650px) {
+            nav {
+                margin-top: 10px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 0 50px;
+            }
+            nav li {
+                padding-bottom: 5px;
+            }
+            }
+
+            nav > ul {
+            width: 35vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            }
+
+            @media (max-width: 650px) {
+            nav > ul {
+                flex-direction: column;
+            }
+            }
+
+            #passion {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 200px;
+            margin-top: 50px;
+            }
+
+            #passion > h2 {
+            margin-top: 80px;
+            margin-bottom: 20px;
+            word-wrap: break-word;
+            }
+
+            #passion input[type='email'] {
+            text-align: center;
+            max-width: 275px;
+            width: 100%;
+            border-color: rgb(81,172,122);
+            padding: 5px;
+            }
+
+            #passion input[type='submit'] {
+            max-width: 150px;
+            width: 100%;
+            height: 30px;
+            margin: 15px 0;
+            border: 0;
+            background-color: rgb(81,172,122);
+            }
+
+            #passion input[type='submit']:hover {
+            color: #fff;
+            background-color: rgb(104,84,157);
+            transition: color 1s, background-color 1s;
+            }
+
+            @media (max-width: 650px) {
+            #passion {
+                margin-top: 100px;
+            }
+            }
+
+            #features {
+            margin-top: 30px;
+            }
+
+            #features .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 125px;
+            width: 20vw;
+            color: rgb(81,172,122);
+            }
+
+            @media (max-width: 550px) {
+            #features .icon {
+                display: none;
+            }
+            }
+
+            #features .desc {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 125px;
+            width: 80vw;
+            padding: 5px;
+            }
+
+            @media (max-width: 550px) {
+            #features .desc {
+                width: 100%;
+                text-align: center;
+                padding: 0;
+                height: 150px;
+            }
+            }
+
+            @media (max-width: 650px) {
+            #features {
+                margin-top: 0;
+            }
+            }
+
+            #favorite-song {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            }
+
+            #favorite-song > iframe {
+            max-width: 560px;
+            width: 100%;
+            }
+
+            #pricing {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            }
+
+            .product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: calc(100% / 3);
+            margin: 10px;
+            border: 1px solid #000;
+            border-radius: 3px;
+            }
+
+            .product > .level {
+            background-color: rgb(207,129,210);
+            color: black;
+            padding: 15px 0;
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: 700;
+            }
+
+            .product > h2 {
+            margin-top: 15px;
+            }
+
+            .product > ol {
+            margin: 15px 0;
+            }
+
+            .product > ol > li {
+            padding: 5px 0;
+            }
+
+            .product > button {
+            border: 0;
+            margin: auto auto 20px auto;
+            background-color: rgb(81,172,122);
+            font-weight: 400;
+            }
+
+            .product > button:hover {
+            color: #fff;
+            background-color: rgb(104,84,157);
+            transition: color 1s, background-color 1s;
+            }
+
+            @media (max-width: 800px) {
+            #pricing {
+                flex-direction: column;
+            }
+            .product {
+                max-width: 300px;
+                width: 100%;
+                margin: 0 auto;
+                margin-bottom: 10px;
+            }
+            }
+
+            footer {
+            margin-top: 30px;
+            background-color: rgb(207,129,210);
+            padding: 20px;
+            }
+
+            footer > ul {
+            display: flex;
+            justify-content: flex-end;
+            }
+
+            footer > ul > li {
+            padding: 0 10px;
+            }
+
+            footer > span {
+            margin-top: 5px;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 0.9em;
+            color: #444;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div id="page-wrapper">
+                <header id="header">
+                  <div class="logo">
+                    <img
+                      id="header-img"
+                      src="https://glanfaloth.github.io/projects/freecodecamp/product/logo.png"
+                      alt="jojo logo"
+                    />
+                  </div>
+              
+                  <nav id="nav-bar">
+                    <ul>
+                      <li><a class="nav-link" href="#features">Features</a></li>
+                      <li><a class="nav-link" href="#favorite-song">Favorite Song</a></li>
+                      <li><a class="nav-link" href="#pricing">Membership Prices</a></li>
+                    </ul>
+                  </nav>
+                </header>
+              
+                <div class="container">
+              
+                <section id="passion">
+                  <h2>Passione - the best Mafia gang in Italy</h2>
+                  <form id="form" action="https://www.freecodecamp.com/email-submit">
+                    <input
+                      name="email"
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email address"
+                      required
+                    />
+                    <input id="submit" type="submit" value="Join Today!" class="btn" />
+                  </form>
+                </section>
+                  <section id="features">
+                    <div class="grid">
+                      <div class="icon"><i class="fa fa-3x fa-globe-europe"></i></div>
+                      <div class="desc">
+                        <h2>Powerful Organization</h2>
+                        <p>
+                            Passione is one of the most powerful gangs in Italy.
+                            The gang is based in Naples, but operatives from Rome and Venice are not unheard of.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="grid">
+                      <div class="icon"><i class="fa fa-3x fa-bug"></i></div>
+                      <div class="desc">
+                        <h2>Talented Members</h2>
+                        <p>
+                            Passione possesses a high number of Stand users, due to its harsh recruiting test.
+                            In order to join, one must be approved by a lieutenant in the gang through an interview.
+                            For details please consult Polpo.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="grid">
+                      <div class="icon">
+                        <i class="fa fa-3x fa-dollar-sign" aria-hidden="true"></i>
+                      </div>
+                      <div class="desc">
+                        <h2>High Income</h2>
+                        <p>
+                            Passione controlled Naples' hotels, port construction sites, and restaurants.
+                            Members earn a good salary.
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+                  <section id="favorite-song">
+                    <iframe
+                      id="video"
+                      height="315"
+                      src="https://www.youtube-nocookie.com/embed/AQx_KMoCgJU?rel=0&amp;controls=0&amp;showinfo=0"
+                      frameborder="0"
+                      allowfullscreen
+                    ></iframe>
+                  </section>
+                  <section id="pricing">
+                    <div class="product" id="gang-members">
+                      <div class="level">Gang members</div>
+                      <h2>$100</h2>
+                      <ol>
+                        <li>Drug Team</li>
+                        <li>Hitman Team</li>
+                        <li>Bodyguard Team</li>
+                        <li>Information Management Team</li>
+                        <li>Gambling Team</li>
+                        <li>Tax Collection Team</li>
+                      </ol>
+                      <button class="btn">Select</button>
+                    </div>
+                    <div class="product" id="lieutenants">
+                      <div class="level">Lieutenants (Caporegimes)</div>
+                      <h2>$1000</h2>
+                      <ol>
+                        <li>Officers tasked with running the gang's business smoothly</li>
+                        <li>Usually assigned a territory</li>
+                        <li>Assigned one or several teams of gang members</li>
+                      </ol>
+                      <button class="btn">Select</button>
+                    </div>
+                    <div class="product" id="adviser">
+                      <div class="level">Adviser (Consiglieri)</div>
+                      <h2>$10000</h2>
+                      <ol>
+                        <li>Counsels the Boss</li>
+                        <li>Acts as a messenger between the Boss and the adviser's direct subordinates: the Lieutenants</li>
+                      </ol>
+                      <button class="btn">Select</button>
+                    </div>
+                  </section>
+                  <footer>
+                    <ul>
+                      <li><a href="#">Privacy</a></li>
+                      <li><a href="#">Terms</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                    <span>Copyright 2001, Passione</span>
+                  </footer>
+                </div>
+              </div>
+        </main>
+    </body>
+</html>
