@@ -1,13 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link
+                rel="stylesheet"
+                href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+                integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+                crossorigin="anonymous"
+            />
+            <link
+                href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap"
+                rel="stylesheet"
+            />
+            <link
+                href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
+                rel="stylesheet"
+            />
         <style>
+            :root {
+            --main-orange: rgb(216,181,104);
+            --main-green: rgb(103,159,79);
+            --main-black: rgb(79,82,90);
+            --main-red: rgb(78,30,40);
+            }
+
+            * {
+            margin: 0;
+            padding: 0;
+            }
+
+            *,
+            *::before,
+            *::after {
+            box-sizing: inherit;
+            }
+
+            html {
+            box-sizing: border-box;
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+            }
+
+            @media (max-width: 75em) {
+            html {
+                font-size: 60%;
+            }
+            }
+
+            @media (max-width: 61.25em) {
+            html {
+                font-size: 58%;
+            }
+            }
+
+            @media (max-width: 28.75em) {
+            html {
+                font-size: 55%;
+            }
+            }
+
+            body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--main-orange);
+            }
+
+            h1,
+            h2 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            text-align: center;
+            }
+
+            h1 {
+            font-size: 6rem;
+            }
+
+            h2 {
+            font-size: 4.2rem;
+            }
+
+            ul {
+            list-style: none;
+            }
+
+            a {
+            text-decoration: none;
+            color: var(--main-orange);
+            }
+
+            img {
+            display: block;
+            width: 100%;
+            }
+
+            .nav {
+            display: flex;
+            justify-content: flex-start;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--main-green);
+            box-shadow: 0 10px 0 rgba(0, 0, 0, 0.4);
+            z-index: 10;
+            }
+
+            .nav-list {
+            display: flex;
+            margin-right: 2rem;
+            margin-left: 2rem;
+            }
+
+            @media (max-width: 28.75em) {
+            .nav {
+                justify-content: center;
+            }
+
+            .nav-list {
+                margin: 0 1rem;
+            }
+            }
+
+            .nav-list a {
+            display: block;
+            font-size: 2.2rem;
+            padding: 2rem;
+            }
+
+            .nav-list a:hover {
+            background: var(--main-black);
+            }
+
+            .welcome-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-color: #000;
+            background-image: linear-gradient(62deg, var(--main-black) 0%, #000 100%);
+            }
+
+            .welcome-section > p {
+            font-size: 3rem;
+            font-weight: 200;
+            font-style: italic;
+            color: var(--main-green);
+            }
+
+            .subordinates-section {
+            text-align: center;
+            padding: 10rem 2rem;
+            background: var(--main-black);
+            }
+
+            .subordinates-section-header {
+            max-width: 1280px;
+            margin: 0 auto 6rem auto;
+            border-bottom: 0.2rem solid var(--main-orange);
+            }
+
+            @media (max-width: 28.75em) {
+            .subordinates-section-header {
+                font-size: 4rem;
+            }
+            }
+
+            .subordinates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-gap: 4rem;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            margin-bottom: 6rem;
+            }
+
+            @media (max-width: 30.625em) {
+            .subordinates-section {
+                padding: 6rem 1rem;
+            }
+
+            .subordinates-grid {
+                grid-template-columns: 1fr;
+            }
+            }
+
+            .subordinate {
+            background: var(--main-red);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            }
+
+            .code {
+            color: var(--main-red);
+            transition: color 0.3s ease-out;
+            }
+
+            .subordinate:hover .code {
+            color: #ff7f50;
+            }
+
+            .subordinate-image {
+            height: calc(100% - 6.8rem);
+            width: 100%;
+            object-fit: cover;
+            }
+
+            .subordinate-title {
+            font-size: 2rem;
+            padding: 2rem 0.5rem;
+            }
+
+            .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 2px;
+            }
+
+            .btn-show-all {
+            font-size: 2rem;
+            background: var(--main-red);
+            transition: background 0.3s ease-out;
+            }
+
+            .btn-show-all:hover {
+            background: var(--main-green);
+            }
+
+            .btn-show-all:hover > i {
+            transform: translateX(2px);
+            }
+
+            .btn-show-all > i {
+            margin-left: 10px;
+            transform: translateX(0);
+            transition: transform 0.3s ease-out;
+            }
+
+            .contact-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            height: 80vh;
+            padding: 0 2rem;
+            background: var(--main-red);
+            }
+
+            .contact-section-header > h2 {
+            font-size: 6rem;
+            }
+
+            @media (max-width: 28.75em) {
+            .contact-section-header > h2 {
+                font-size: 4rem;
+            }
+            }
+
+            .contact-section-header > p {
+            font-style: italic;
+            }
+
+            .contact-links {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 980px;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+            }
+
+            .contact-details {
+            font-size: 2.4rem;
+            text-shadow: 2px 2px 1px #1f1f1f;
+            transition: transform 0.3s ease-out;
+            }
+
+            .contact-details:hover {
+            transform: translateY(8px);
+            }
+
+            footer {
+            font-weight: 300;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 2rem;
+            background: var(--main-red);
+            border-top: 4px solid var(--main-green);
+            }
+
+            footer > p {
+            margin: 2rem;
+            }
+
+            footer i {
+            vertical-align: middle;
+            }
+
+            @media (max-width: 28.75em) {
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+            }
 
         </style>
     </head>
 <body>
-    <main>
-        
+    <main>   
+      <nav id="navbar" class="nav">
+        <ul class="nav-list">
+          <li>
+            <a href="#welcome-section">About</a>
+          </li>
+          <li>
+            <a href="#subordinates">Subordinates</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+    </nav>
+      
+      <section id="welcome-section" class="welcome-section">
+        <h1>It is me, Dio!</h1>
+        <p>Lawyer, Vampire, Stand User</p>
+      </section>
+      
+      <section id="subordinates" class="subordinates-section">
+        <h2 class="subordinates-section-header">These are some of my subordinates. The Egypt 9 Glory Gods!</h2>
+      
+        <div class="subordinates-grid">
+          <a
+            href="https://jojowiki.com/N%27Doul"
+            target="_blank"
+            class="subordinate "
+          >
+            <img
+              class="subordinate-image"
+              src="https://static.jojowiki.com/images/1/18/latest/20200101154448/N%27DoulAv.png"
+              alt="subordinate"
+            />
+            <p class="subordinate-title">
+              <span class="code">&lt;</span>
+              N'Doul
+              <span class="code">&#47;&gt;</span>
+            </p>
+          </a>
+          <a
+            href="https://jojowiki.com/Oingo"
+            target="_blank"
+            class="subordinate "
+          >
+            <img
+              class="subordinate-image"
+              src="https://static.jojowiki.com/images/9/96/latest/20200101154214/OingoAv.png"
+              alt="subordinate"
+            />
+            <p class="subordinate-title">
+              <span class="code">&lt;</span>
+              Oingo
+              <span class="code">&#47;&gt;</span>
+            </p>
+          </a>
+          <a
+            href="https://jojowiki.com/Boingo"
+            target="_blank"
+            class="subordinate "
+          >
+            <img
+              class="subordinate-image"
+              src="https://static.jojowiki.com/images/4/4a/latest/20200126011145/BoingoAv.png"
+              alt="subordinate"
+            />
+            <p class="subordinate-title">
+              <span class="code">&lt;</span>
+              Boingo
+              <span class="code">&#47;&gt;</span>
+            </p>
+          </a>
+          <a
+            href="https://jojowiki.com/Anubis"
+            target="_blank"
+            class="subordinate "
+          >
+            <img
+              class="subordinate-image"
+              src="https://static.jojowiki.com/images/6/60/latest/20191015214440/AnubisMangaAv.png"
+              alt="subordinate"
+            />
+            <p class="subordinate-title">
+              <span class="code">&lt;</span>
+              Anubis
+              <span class="code">&#47;&gt;</span>
+            </p>
+          </a>
+          <a
+            href="https://jojowiki.com/Mariah"
+            target="_blank"
+            class="subordinate "
+          >
+            <img
+              class="subordinate-image"
+              src="https://static.jojowiki.com/images/3/3f/latest/20200222091432/MariahAv.png"
+              alt="subordinate"
+            />
+            <p class="subordinate-title">
+              <span class="code">&lt;</span>
+              Mariah
+              <span class="code">&#47;&gt;</span>
+            </p>
+          </a>
+          <a
+            href="https://jojowiki.com/Alessi"
+            target="_blank"
+            class="subordinate "
+          >
+            <img
+              class="subordinate-image"
+              src="https://static.jojowiki.com/images/4/44/latest/20200102213415/AlessiAv.png"
+              alt="subordinate"
+            />
+            <p class="subordinate-title">
+              <span class="code">&lt;</span>
+              Alessi
+              <span class="code">&#47;&gt;</span>
+            </p>
+          </a>
+          <a
+            href="https://jojowiki.com/Daniel_J._D%27Arby"
+            target="_blank"
+            class="subordinate "
+          >
+            <img
+              class="subordinate-image"
+              src="https://static.jojowiki.com/images/e/e3/latest/20200126014904/DArbyAv.png"
+              alt="subordinate"
+            />
+            <p class="subordinate-title">
+              <span class="code">&lt;</span>
+              Daniel J. D'Arby
+              <span class="code">&#47;&gt;</span>
+            </p>
+          </a>
+          <a
+            href="https://jojowiki.com/Pet_Shop"
+            target="_blank"
+            class="subordinate "
+          >
+            <img
+              class="subordinate-image"
+              src="https://static.jojowiki.com/images/0/09/latest/20200126011233/PetShopAv.png"
+              alt="subordinate"
+            />
+            <p class="subordinate-title">
+              <span class="code">&lt;</span>
+              Pet Shop
+              <span class="code">&#47;&gt;</span>
+            </p>
+          </a>
+          <a
+            href="https://jojowiki.com/Telence_T._D%27Arby"
+            target="_blank"
+            class="subordinate "
+          >
+            <img
+              class="subordinate-image"
+              src="https://static.jojowiki.com/images/6/68/latest/20191015214657/TelenceAv.png"
+              alt="subordinate"
+            />
+            <p class="subordinate-title">
+              <span class="code">&lt;</span>
+              Telence T. D'Arby
+              <span class="code">&#47;&gt;</span>
+            </p>
+          </a>
+        </div>
+      
+        <a
+          href="https://jojowiki.com/Egypt_9_Glory_Gods"
+          class="btn btn-show-all"
+          target="_blank"
+          >Show all<i class="fas fa-chevron-right"></i
+        ></a>
+      </section>
+      
+      <section id="contact" class="contact-section">
+        <div class="contact-section-header">
+          <h2>Let's work together...</h2>
+          <p>and beat up the Joestar family!</p>
+        </div>
+        <div class="contact-links">
+          <a
+            href="https://jojo.fandom.com/wiki/DIO%27s_Mansion#:~:text=DIO's%20Mansion%20appears%20as%20an,trees%20and%20other%20exotic%20plants."
+            target="_blank"
+            class="btn contact-details"
+            ><i class="fa fa-map-marker-alt"></i> Dio's Mansion in Cairo, Egypt</a
+          >
+        </div>
+      </section>
+      
+      <footer>
+        <p>
+          人間をやめる。人間を超越する。
+        </p>
+      </footer>
+      
     </main>
 </body>
 </html>
