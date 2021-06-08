@@ -8,18 +8,16 @@
     <meta name="description" content="https://glanfaloth.github.io/" />
     <meta name="keywords" content="blog,portfolio,ideas" />
 
-    <meta property="og:site_name" content="Lanlan" />
+    <meta property="og:site_name" content="Main" />
     <meta
       property="og:title"
-      content="
-  Autotune: 2025 Crossover - Lanlan
-"
+      content="Grimmetropolis: Game Programming Lab 2021 - Main"
     />
-    <meta property="og:description" content="2025crossover" />
+    <meta property="og:description" content="gamelab2021" />
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content="https://glanfaloth.github.io/projects/2025crossover/"
+      content="https://glanfaloth.github.io/projects/gamelab2021/"
     />
     <meta
       property="og:image"
@@ -28,19 +26,21 @@
     <meta name="twitter:card" content="summary" />
     <meta
       name="twitter:site"
-      content="https://glanfaloth.github.io/projects/2025crossover/"
+      content="https://glanfaloth.github.io/projects/gamelab2021/"
     />
     <meta
       name="twitter:image"
       content="https://glanfaloth.github.io/images/tn.png"
     />
 
-    <base href="https://glanfaloth.github.io/projects/2025crossover/" />
-    <title>Autotune: 2025 Crossover - Lanlan</title>
+    <base href="https://glanfaloth.github.io/projects/gamelab2021/" />
+    <title>
+      Grimmetropolis: Game Programming Lab 2021 - Lanlan
+    </title>
 
     <link
       rel="canonical"
-      href="https://glanfaloth.github.io/projects/2025crossover/"
+      href="https://glanfaloth.github.io/projects/gamelab2021/"
     />
 
     <link
@@ -62,6 +62,10 @@
       rel="stylesheet"
       href="https://glanfaloth.github.io/css/style.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://glanfaloth.github.io/css/name-map.css"
+    />
 
     <link
       rel="icon"
@@ -80,13 +84,13 @@
       rel="alternate"
       href="https://glanfaloth.github.io/index.xml"
       type="application/rss+xml"
-      title="Lanlan"
+      title="Main"
     />
     <link
       href="https://glanfaloth.github.io/index.xml"
       rel="feed"
       type="application/rss+xml"
-      title="Lanlan"
+      title="Main"
     />
 
     <meta name="generator" content="Hugo 0.58.0" />
@@ -155,18 +159,33 @@
         <section class="container page">
           <article>
             <header>
-              <h1>Autotune: 2025 Crossover</h1>
+              <h1>
+                Grimmetropolis: Game Programming Lab 2021
+              </h1>
             </header>
 
             <hr />
 
-            <figure>
-              <img src="/projects/2025crossover/1.jpg" />
-            </figure>
-
-            <figure>
-              <img src="/projects/2025crossover/2.jpg" />
-            </figure>
+            <h5>
+              <a href="https://polybox.ethz.ch/index.php/s/2aMawA9MLkp34IZ" target="_blank">Download the game</a>
+              |
+              <a href="https://youtu.be/TZ4SeGlLzUU" target="_blank">Final Presentation</a>
+              |
+              <a href="https://youtu.be/EufZE2K2O5o" target="_blank">Trailer Video (YouTube)</a> |
+              <a href="https://www.bilibili.com/video/BV1EK4y1R7kq" target="_blank"
+                >Trailer Video (Bilibili)</a
+              >
+            </h5>
+            <div style="display: flex; justify-content: center">
+              <iframe
+                width="660"
+                height="371"
+                src="https://www.youtube.com/embed/5dfLwA-JWGA?enablejsapi=1&amp;hl=en_US&amp;rel=0&amp;start=&amp;version=3&amp;wmode=transparent"
+                allowfullscreen="allowfullscreen"
+                frameborder="0"
+              ></iframe>
+            </div>
+            
           </article>
         </section>
       </div>
@@ -188,7 +207,8 @@
     </main>
 
     <script src="https://glanfaloth.github.io/js/app.js"></script>
-
+    <script src="https://glanfaloth.github.io/js/name-map.js"></script>
+    <script src="https://glanfaloth.github.io/js/jquery.rwdImageMaps.js"></script>
     <script>
       (function ($) {
         $(function () {
@@ -200,6 +220,11 @@
           });
         });
       })(jQuery);
+    </script>
+    <script>
+      $(document).ready(function (e) {
+        $("img[usemap]").rwdImageMaps();
+      });
     </script>
   </body>
 </html>
