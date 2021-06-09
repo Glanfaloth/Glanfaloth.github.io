@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Comfortaa:400,500");
+@import url("https://fonts.googleapis.com/css?family=DotGothic16:400,500");
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@ div {
 body {
   background-color: #444;
   color: #444;
-  font-family: "Comfortaa", sans-serif;
+  font-family: "DotGothic16", sans-serif;
   font-weight: 400;
   display: flex;
   justify-content: center;
