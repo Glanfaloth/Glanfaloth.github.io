@@ -18,13 +18,40 @@ var colors = [
 var currentQuote = '',
   currentAuthor = '';
 
+// // check if a character is a Japanese character using the unicode character ranges
+// function isJP(ch) {
+//     return (ch >= "\u4e00" && ch <= "\u9faf") ||
+// 	(ch >= "\u3400" && ch <= "\u4dbf") || (ch >= "\u3040" && ch <= "\u309f") ||
+// 	(ch >= "\u30a0" && ch <= "\u30ff");
+// }
+// function some(str, callback) {
+//     return Array.prototype.some.call(str, callback);
+// }
+// // checks if a string contains a Japanese character
+// function hasJP(str) {
+//     return some(str, isJP);
+// }
+// function basicParser(str, condition) {
+//     let result = [];
+
+//     for (let i = 0; i < str.length; ++i) {
+//         if (condition(str[i])) {
+//             result.push(str[i]);
+//         }
+//     }
+
+//     return result;
+// }
+// function parseJP(str) {
+//     return basicParser(str, isJP);
+// }
 function getQuotes() {
   return $.ajax({
     headers: {
       Accept: 'application/json'
     },
     url:
-      'https://raw.githubusercontent.com/Glanfaloth/Glanfaloth.github.io/master/projects/freecodecamp/randomquote/quotes.json',
+      'https://gist.githubusercontent.com/Glanfaloth/bcaf373a3702adf3b4afd40f9e9a9a2e/raw/adc96cdd1a34c7f79d7496c2fbdceaedbee2286d/jojoquotes.json',
     success: function (jsonQuotes) {
       if (typeof jsonQuotes === 'string') {
         quotesData = JSON.parse(jsonQuotes);
